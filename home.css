@@ -1,8 +1,10 @@
 body {
+    font-family: Helvetica, Arial, sans-serif;
+
     background: linear-gradient(
-        270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+        270deg, #0d00ff, #8c00ff, #ff0080);
     background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite;
+    animation: gradientAnimation 5s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -17,21 +19,21 @@ body {
 }
 
 .bar {
-  background: #fad0c4;
-  color: #333;
+  background: #ffffff;
+  color: #ff006a;
   margin: 10px 0;
   padding: 10px;
   width: 0;
-  border-radius: 5px;
-  transition: width 2s;
-  font-weight: bold;
+  border-radius: 10px;
+  transition: width 3s;
+  font-weight: semibold;
   overflow: hidden;
   white-space: nowrap;
   animation: growBar 2s forwards;
   animation-delay: 0.5s;
 }
 
-.bar:nth-child(2) { animation-delay: 1s; }
+.bar:nth-child(2) { animation-delay: 3s; }
 .bar:nth-child(3) { animation-delay: 1.5s; }
 
 @keyframes growBar {
@@ -56,3 +58,35 @@ leyenda-gif {
   margin-top: 10px;
 }
 
+.flotante {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    z-index: -1;
+    transition: top 1s, left 1s;
+    /* animation: flotarPantalla 6s ease-in-out infinite alternate;  <-- quita o comenta esta línea */
+}
+
+@keyframes flotarPantalla {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        left: calc(100vw - 120px);
+    }
+    50% {
+        top: calc(100vh - 120px);
+        left: calc(100vw - 120px);
+    }
+    75% {
+        top: calc(100vh - 120px);
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}

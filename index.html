@@ -6,22 +6,42 @@
     <title>holis</title>
     <link rel="stylesheet" href="home.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const flotante = document.querySelector('.flotante');
+  const ancho = 300; // ancho de la imagen en px
+  const alto = 300;  // alto de la imagen en px (ajusta si tu imagen es más pequeña)
+
+  function moverAleatorio() {
+    const maxX = window.innerWidth - ancho;
+    const maxY = window.innerHeight - alto;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+    flotante.style.left = x + "px";
+    flotante.style.top = y + "px";
+  }
+
+  setInterval(moverAleatorio, 1000); // Cambia de posición cada 1.5 segundos
+});
+</script>
+
 <body>
     
     <h1>hola prroz</h1>
-    <p> holis </p>
+    <p> :v</p>
 <div class="bar-container">
-  <div class="bar" style="--bar-width: 80%;">está</div>
-  <div class="bar" style="--bar-width: 60%;">enamorada</div>
-  <div class="bar" style="--bar-width: 40%;">el amor es una magia</div>
+  <div class="bar" style="--bar-width: 80%;"> el amor es una magia </div>
+  <div class="bar" style="--bar-width: 60%;"> una simple fantasía </div>
+  <div class="bar" style="--bar-width: 40%;"> es como un sueño </div>
 </div>
 
 <div class="muñeco-bailando">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm96dWpwdGx1M2liMnZtc2k0OXg1cjdsZjNvZnE2YnV6d3BtNmNuYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/aacOScXMXvjpK/giphy.gif" alt="Muñeco bailando">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2hod3E1MzEzaG9oMngxN2Q4bnBscXM0OXNnMGFrbjZjb2lmY2NqOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1SvnHJFEuEH7hp81tF/giphy.gif" alt="Muñeco bailando">
   <p class="leyenda-gif"> disfrutando su bebida </p>
 </div>
 
-
+<img src="tugrafico.jpeg" class="flotante" alt="Gráfico flotante">
 
 
 </body>
