@@ -19,7 +19,7 @@ body {
 }
 
 .bar {
-  background: #ffffff;
+  background: #ffd000;
   color: #ff006a;
   margin: 10px 0;
   padding: 10px;
@@ -29,7 +29,7 @@ body {
   font-weight: semibold;
   overflow: hidden;
   white-space: nowrap;
-  animation: growBar 2s forwards;
+  animation: growBar 2s forwards infinite;
   animation-delay: 0.5s;
 }
 
@@ -51,10 +51,10 @@ body {
   height: auto;
 }
 
-leyenda-gif {
+.leyenda-gif {
   text-align: center;
-  font-style: italic;
-  color: #555;
+  font-style: 300;
+  color: #ffddf5;
   margin-top: 10px;
 }
 
