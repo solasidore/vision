@@ -48,3 +48,10 @@ body {
   width: 500px;
   height: auto;
 }
+leyenda-gif {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+}
+
