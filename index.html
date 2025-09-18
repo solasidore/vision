@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>holis</title>
     <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 
 <script>
@@ -27,9 +28,16 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <body>
-    
-    <h1>hola prroz</h1>
-    <p> :v</p>
+    <div class="hero">
+    <h1> soy fakin dios</h1> 
+    </div>
+    <button id="enable-sound" class="sound-btn">Activar sonido</button>
+
+    <div class="content">
+    <p> que me digas loco, que me des de besos y que te rías de miiiii </p>  
+    </div>
+
+
 <div class="bar-container">
   <div class="bar" style="--bar-width: 80%;"> el amor es una magia </div>
   <div class="bar" style="--bar-width: 60%;"> una simple fantasía </div>
@@ -37,12 +45,58 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 <div class="muñeco-bailando">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2hod3E1MzEzaG9oMngxN2Q4bnBscXM0OXNnMGFrbjZjb2lmY2NqOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1SvnHJFEuEH7hp81tF/giphy.gif" alt="Muñeco bailando">
-  <p class="leyenda-gif"> achutado... no quiere trabajar </p>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzNoenYzdHR6YXgyOHM2bDM5em56MHNuNmxoYm5ueDl2cHpqM2szciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sUP52mudix9Zu/giphy.gif" alt="Muñeco bailando">
+  <p class="leyenda-gif"> te amo cuchurrumino </p>
 </div>
 
 <img src="tugrafico.jpeg" class="flotante" alt="Gráfico flotante">
 
+<audio id="bg-music" src="Le%C3%B3n%20Larregui%20-%20Locos%20%28Audio%29.mp3" preload="auto" loop playsinline></audio>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const audio = document.getElementById('bg-music');
+  const btn = document.getElementById('enable-sound');
+  audio.volume = 0.7;
+
+  let isPlaying = false;
+
+  function setButtonPlayingState(playing) {
+    isPlaying = playing;
+    btn.textContent = playing ? 'Pausar sonido' : 'Activar sonido';
+  }
+
+  async function playAudio(markEnabled) {
+    try {
+      await audio.play();
+      if (markEnabled) localStorage.setItem('musicEnabled','true');
+      setButtonPlayingState(true);
+      return true;
+    } catch (e) {
+      setButtonPlayingState(false);
+      return false;
+    }
+  }
+
+  function pauseAudio() {
+    audio.pause();
+    setButtonPlayingState(false);
+  }
+
+  if (localStorage.getItem('musicEnabled') === 'true') {
+    await playAudio(false);
+  } else {
+    setButtonPlayingState(false);
+  }
+
+  btn.addEventListener('click', async () => {
+    if (isPlaying) {
+      pauseAudio();
+    } else {
+      await playAudio(true);
+    }
+  });
+});
+</script>
 
 </body>
 </html>
